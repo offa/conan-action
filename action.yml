@@ -1,0 +1,20 @@
+name: "Conan Build"
+description: "Setup Conan"
+author: "offa"
+branding:
+  icon: "check-circle"
+  color: "green"
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Setup Conan"
+      run: |
+        apt-get update
+        apt-get install -y pipx
+        echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+        export PATH="${HOME}/.local/bin:${PATH}"
+        pipx install conan
+        conan config install "${GITHUB_ACTION_PATH}/settings_user.yml"
+        conan profile detect
+      shell: bash
