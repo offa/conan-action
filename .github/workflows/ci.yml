@@ -23,3 +23,12 @@ jobs:
         uses: ./
       - name: Build
         run: test/ci_build.sh
+
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: yamllint
+        run: |
+          pip install -U yamllint
+          yamllint --strict settings_user.yml
