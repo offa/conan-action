@@ -1,0 +1,25 @@
+name: ci
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  build_linux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler:
+          - gcc:15
+          - clang:21
+    container:
+      image: "registry.gitlab.com/offa/docker-images/${{ matrix.compiler }}"
+    name: "${{ matrix.compiler }}"
+    steps:
+      - uses: actions/checkout@main
+      - name: Conan Action
+        uses: ./
+      - name: Build
+        run: test/ci_build.sh
