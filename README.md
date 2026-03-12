@@ -1,6 +1,7 @@
 # conan-action
 
 [![ci](https://github.com/offa/conan-action/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/offa/conan-action/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/release/offa/action-action.svg)](https://github.com/offa/action-action/releases)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 GitHub Action for Conan based projects.
