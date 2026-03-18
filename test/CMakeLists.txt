@@ -9,17 +9,20 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(Catch2 REQUIRED)
 
-add_compile_options(-Wall
-    -Wextra
-    -pedantic
-    -pedantic-errors
-    -Werror
-    -Wshadow
-    -Wold-style-cast
-    -Wnull-dereference
-    -Wnon-virtual-dtor
-    -Woverloaded-virtual
-    )
+
+if (NOT MSVC)
+    add_compile_options(-Wall
+        -Wextra
+        -pedantic
+        -pedantic-errors
+        -Werror
+        -Wshadow
+        -Wold-style-cast
+        -Wnull-dereference
+        -Wnon-virtual-dtor
+        -Woverloaded-virtual
+        )
+endif()
 
 add_executable(gha-test gha-test.cpp)
 target_link_libraries(gha-test PRIVATE Catch2::Catch2WithMain)

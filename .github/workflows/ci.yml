@@ -24,6 +24,19 @@ jobs:
       - name: Build
         run: test/ci_build.sh
 
+  build_msvc:
+    runs-on: windows-latest
+    name: "msvc"
+    steps:
+      - uses: actions/checkout@main
+      - name: Conan Action
+        uses: ./
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756
+      - name: Build
+        run: test/ci_build.sh
+        shell: bash
+
   yamllint:
     runs-on: ubuntu-latest
     steps:
