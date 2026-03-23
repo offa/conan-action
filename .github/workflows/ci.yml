@@ -37,6 +37,17 @@ jobs:
         run: test/ci_build.sh
         shell: bash
 
+  build_osx:
+    runs-on: macOS-latest
+    name: "mac os"
+    steps:
+      - uses: actions/checkout@main
+      - name: Conan Action
+        uses: ./
+      - name: Build
+        run: test/ci_build.sh
+
+
   yamllint:
     runs-on: ubuntu-latest
     steps:
