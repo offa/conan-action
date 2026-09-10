@@ -14,6 +14,7 @@ jobs:
         compiler:
           - gcc:16
           - gcc:15
+          - clang:23
           - clang:22
           - clang:21
     container:
