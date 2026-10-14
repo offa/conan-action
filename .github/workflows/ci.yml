@@ -21,7 +21,7 @@ jobs:
       image: "registry.gitlab.com/offa/docker-images/${{ matrix.compiler }}"
     name: "${{ matrix.compiler }}"
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v7
       - name: Conan Action
         uses: ./
       - name: Build
@@ -31,7 +31,7 @@ jobs:
     runs-on: windows-latest
     name: "msvc"
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v7
       - name: Conan Action
         uses: ./
       - name: Setup MSVC
@@ -44,7 +44,7 @@ jobs:
     runs-on: macOS-latest
     name: "mac os"
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v7
       - name: Conan Action
         uses: ./
       - name: Build
@@ -54,7 +54,7 @@ jobs:
   yamllint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v7
       - name: yamllint
         run: |
           pip install -U yamllint
