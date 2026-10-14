@@ -4,7 +4,7 @@
 [![GitHub release](https://img.shields.io/github/release/offa/conan-action.svg)](https://github.com/offa/conan-action/releases)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-GitHub Action for Conan based projects.
+GitHub Action for Conan-based projects.
 
 Provides Conan installation and setup.
 
