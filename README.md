@@ -6,7 +6,11 @@
 
 GitHub Action for Conan-based projects.
 
-Provides Conan installation and setup.
+Provides Conan installation and setup with up-to-date compiler support.
+
+### Included Settings File
+
+The action includes a built-in `settings_user.yml` with support for latest GCC, Clang, and MSVC. It is automatically installed during the Conan setup step.
 
 ### Recommendation
 
