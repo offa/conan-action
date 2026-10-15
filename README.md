@@ -28,7 +28,7 @@ Minimal example:
 
 A more complete example, including optional caching of Conan packages:
 
-```
+```yml
 jobs:
   build:
     runs-on: ubuntu-latest
